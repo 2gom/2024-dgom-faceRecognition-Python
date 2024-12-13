@@ -8,6 +8,11 @@ app = Flask(__name__)
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 
+
+@app.route("/")
+def index():
+    return "2 Geeks one Monkey"
+
 @app.route("/detect_faces", methods=["POST"])
 def detect_faces():
     # Obtener la imagen de la solicitud
